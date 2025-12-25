@@ -1,8 +1,12 @@
 import './Hero.css'
 import LiquidEther from './LiquidEther'
 import MainGrid from './MainGrid'
+import MainGridMobile from './MainGridMobile'
+import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Hero({ onNavClick }) {
+  const isMobile = useIsMobile()
+
   return (
     <section className="hero">
       <div className="hero-liquid-bg">
@@ -32,7 +36,11 @@ export default function Hero({ onNavClick }) {
         <div className="line"></div>
         <p className="hero-subtitle">PORTFÓLIO</p>
       </div>
-      <MainGrid onNavClick={onNavClick} />
+      {isMobile ? (
+        <MainGridMobile onNavClick={onNavClick} />
+      ) : (
+        <MainGrid onNavClick={onNavClick} />
+      )}
     </section>
   )
 }
