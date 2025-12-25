@@ -6,14 +6,17 @@ import ProjectsContent from './ProjectsContent'
 import SkillsContent from './SkillsContent'
 import CertificatesContent from './CertificatesContent'
 import ContactContent from './ContactContent'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function HeroMobile() {
+export default function HeroMobile({ onMobileNavClick }) {
   const [activeModal, setActiveModal] = useState(null)
 
-  const handleNavClick = (section) => {
-    setActiveModal(section)
-  }
+  // Registrar setActiveModal para o App usar
+  useEffect(() => {
+    if (onMobileNavClick) {
+      onMobileNavClick(setActiveModal)
+    }
+  }, [onMobileNavClick])
 
   const renderModalContent = () => {
     switch (activeModal) {
