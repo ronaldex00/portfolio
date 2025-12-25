@@ -1,7 +1,6 @@
 import './Hero.css'
 import LiquidEther from './LiquidEther'
 import MainGrid from './MainGrid'
-import MainGridMobile from './MainGridMobile'
 import { useIsMobile } from '../hooks/useIsMobile'
 
 export default function Hero({ onNavClick }) {
@@ -36,9 +35,7 @@ export default function Hero({ onNavClick }) {
         <div className="line"></div>
         <p className="hero-subtitle">PORTFÓLIO</p>
       </div>
-      {isMobile ? (
-        <MainGridMobile onNavClick={onNavClick} />
-      ) : (
+      {!isMobile && (
         <MainGrid onNavClick={onNavClick} />
       )}
     </section>
