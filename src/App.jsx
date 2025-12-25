@@ -34,8 +34,9 @@ function App() {
 
   return (
     <>
-      {isMobile ? <HeaderMobile onNavClick={handleMobileNavClick} /> : <Header onNavClick={handleNavClick} />}
-      {isMobile ? <HeroMobile onMobileNavClick={handleSetMobileActiveModal} /> : <Hero onNavClick={handleSetActiveModal} />}
+      <Header onNavClick={handleNavClick} />
+      {isMobile && <HeroMobile onMobileNavClick={handleSetMobileActiveModal} />}
+      {!isMobile && <Hero onNavClick={handleSetActiveModal} />}
       <Footer />
     </>
   )
