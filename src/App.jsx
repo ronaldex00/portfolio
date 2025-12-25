@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <Header onNavClick={handleNavClick} />
-      <Hero onNavClick={handleSetActiveModal} />
+      <Hero onNavClick={handleSetActiveModal} headerNavClick={handleNavClick} />
       <Footer />
     </>
   )
