@@ -12,7 +12,11 @@ dist
 dist-ssr
 *.local
 
+<<<<<<< HEAD
 # Environment variables
+=======
+# Variáveis de ambiente
+>>>>>>> 3027dac3c70840a8c336ba85ff4d704c6ac9e245
 .env
 .env.local
 .env.*.local

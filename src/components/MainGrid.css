@@ -117,27 +117,36 @@
 /* Mobile */
 @media (max-width: 768px) {
   .main-grid-section {
-    padding: 2rem 0;
+    padding: 2rem 0 100px 0;
   }
 
   .main-grid {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 160px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     gap: 1rem;
     padding: 0 1rem;
+    justify-content: center;
   }
 
   .main-grid-card {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
+    flex: 0 1 calc(50% - 0.5rem);
+    height: 220px;
     padding: 1.5rem;
   }
 
+  .card-label {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
   .card-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
   }
 
   .card-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
   }
 }
