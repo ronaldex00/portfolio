@@ -22,7 +22,7 @@ export default function ContactContent() {
 
   // Inicializar EmailJS
   useEffect(() => {
-    emailjs.init('sMTcw43SngcHdx7W2')
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
   }, [])
 
   const handleChange = (e) => {
@@ -38,10 +38,10 @@ export default function ContactContent() {
     
     try {
       await emailjs.send(
-        'service_9et5cgv', // Seu Service ID
-        'template_egfclkq', // Seu Template ID
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          to_email: 'h.resende00@gmail.com', // Seu email
+          to_email: 'h.resende00@gmail.com',
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message
