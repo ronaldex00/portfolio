@@ -34,9 +34,16 @@ function App() {
 
   return (
     <>
-      <Header onNavClick={handleNavClick} />
-      {isMobile && <HeroMobile onMobileNavClick={handleSetMobileActiveModal} />}
-      {!isMobile && <Hero onNavClick={handleSetActiveModal} />}
+      {isMobile ? (
+        <HeaderMobile onNavClick={handleMobileNavClick} />
+      ) : (
+        <Header onNavClick={handleNavClick} />
+      )}
+      {isMobile ? (
+        <HeroMobile onMobileNavClick={handleSetMobileActiveModal} />
+      ) : (
+        <Hero onNavClick={handleSetActiveModal} />
+      )}
       <Footer />
     </>
   )
